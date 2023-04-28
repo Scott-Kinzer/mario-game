@@ -150,10 +150,10 @@ function animate () {
 
     [...genericObjects, ...platforms].forEach((gen) => {
         gen.draw();
-        if (keys.right.pressed) {
+        if (keys.right.pressed && player.position.x === 400) {
             leftOffset++;
             gen.position.x -= 5;
-        } else if (keys.left.pressed && leftOffset > 100) {
+        } else if (keys.left.pressed && player.position.x === 100 && leftOffset > 100) {
             leftOffset--;
             gen.position.x += 5;
         }
